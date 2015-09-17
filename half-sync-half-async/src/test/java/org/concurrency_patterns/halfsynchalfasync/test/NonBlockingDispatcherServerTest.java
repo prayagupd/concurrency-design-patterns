@@ -1,7 +1,7 @@
 package org.concurrency_patterns.halfsynchalfasync.test;
 
 import org.apache.commons.io.FileUtils;
-import org.concurrency_patterns.halfsynchalfasync.non_blocking.dispatcher.AsyncSubscriberThread;
+import org.concurrency_patterns.halfsynchalfasync.non_blocking.subscriberClient.AsyncSubscriberThread;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

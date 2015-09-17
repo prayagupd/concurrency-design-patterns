@@ -1,4 +1,6 @@
-package org.concurrency_patterns.halfsynchalfasync.non_blocking.dispatcher;
+package org.concurrency_patterns.halfsynchalfasync.non_blocking.subscriberClient;
+
+import org.concurrency_patterns.halfsynchalfasync.non_blocking.dispatcher.NonBlockingDispatcher;
 
 /**
  * @author: Tomas Zezula

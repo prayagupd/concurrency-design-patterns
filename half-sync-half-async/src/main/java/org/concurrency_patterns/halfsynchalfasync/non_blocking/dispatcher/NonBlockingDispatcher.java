@@ -1,6 +1,7 @@
 package org.concurrency_patterns.halfsynchalfasync.non_blocking.dispatcher;
 
 import org.concurrency_patterns.halfsynchalfasync.non_blocking.queue.WorkQueue;
+import org.concurrency_patterns.halfsynchalfasync.non_blocking.subscriberClient.Subscriber;
 
 /**
  * Represents an asynchronous layer, as it forwards client requests for further
