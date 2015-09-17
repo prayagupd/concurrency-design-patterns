@@ -1,4 +1,4 @@
-package org.concurrency_patterns.monitorobject;
+package org.concurrency_patterns.monitorobject.exception;
 
 /**
  * @author Tomas Zezula

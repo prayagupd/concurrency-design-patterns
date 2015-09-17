@@ -1,10 +1,10 @@
-package org.concurrency_patterns.halfsynchalfasync.non_blocking;
+package org.concurrency_patterns.halfsynchalfasync.non_blocking.dispatcher;
 
 /**
  * @author: Tomas Zezula
  * Date: 24/08/2014
  */
-public class AsyncResultSubscriberThread implements Runnable, ResultSubscriber {
+public class AsyncSubscriberThread implements Runnable, Subscriber {
 
     private boolean result;
 
@@ -16,7 +16,7 @@ public class AsyncResultSubscriberThread implements Runnable, ResultSubscriber {
 
     private String imgPath, outPath;
 
-    public AsyncResultSubscriberThread(String imgPath, String outPath) {
+    public AsyncSubscriberThread(String imgPath, String outPath) {
         this.imgPath = imgPath;
         this.outPath = outPath;
         app = new NonBlockingDispatcher(this);

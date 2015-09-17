@@ -1,5 +1,7 @@
 package org.concurrency_patterns.monitorobject;
 
+import org.concurrency_patterns.monitorobject.exception.ToiletFloodedException;
+
 /**
  * @author Tomas Zezula
  * Date: 27/07/2014

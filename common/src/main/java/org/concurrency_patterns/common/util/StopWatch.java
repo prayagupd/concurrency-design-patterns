@@ -1,4 +1,4 @@
-package org.zezutom.concurrencypatterns.test.util;
+package org.concurrency_patterns.common.util;
 
 /**
  * @author: Tomas Zezula

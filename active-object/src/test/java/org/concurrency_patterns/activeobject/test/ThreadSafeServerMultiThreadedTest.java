@@ -5,7 +5,7 @@ import org.concurrency_patterns.activeobject.ThreadSafeServer;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.zezutom.concurrencypatterns.test.util.TestExecutor;
+import org.concurrency_patterns.common.util.TestExecutor;
 
 import static org.junit.Assert.assertEquals;
 

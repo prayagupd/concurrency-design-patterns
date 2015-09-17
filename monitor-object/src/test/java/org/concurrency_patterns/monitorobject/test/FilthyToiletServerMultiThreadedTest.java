@@ -5,8 +5,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.concurrency_patterns.monitorobject.ToiletServer;
-import org.concurrency_patterns.monitorobject.ToiletFloodedException;
-import org.zezutom.concurrencypatterns.test.util.TestExecutor;
+import org.concurrency_patterns.monitorobject.exception.ToiletFloodedException;
+import org.concurrency_patterns.common.util.TestExecutor;
 
 import static org.junit.Assert.assertTrue;
 

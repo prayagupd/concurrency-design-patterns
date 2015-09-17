@@ -1,19 +1,18 @@
 # Half-Sync / Half-Async
 
-The pattern separates asynchronous I/O from the synchronous one. Main thread doesn't block on incoming client requests and long-running operations are offloaded
-to a dedicated synchronous layer. Processing results are delivered by the means of callbacks.
+The pattern separates `asynchronous I/O` from the `synchronous` one. Main thread doesn't block on incoming client requests and long-running operations are offloaded to a dedicated synchronous layer. Processing results are delivered by the means of callbacks.
 
 Examples:
-- largely used in operating systems (hardware interrupts, application management)
+- largely used in `operating system`s (hardware interrupts, application management)
 - Android programming - [AsyncTask](http://developer.android.com/reference/android/os/AsyncTask.html) (file downloads ..)
 
-A decent queuing system is required to handle messaging between the two layers. The challenge
+A decent `Queuing system` is required to handle messaging between the two layers. The challenge
 lies in preventing race conditions and other concurrency related issues.
 
 ## Key Components
-- __Synchronous Service Layer__: deals with long-running tasks, implements the core business logic
-- __Queuing Layer__: a request queue, doesn't block the caller
-- __Asynchronous Service Layer__: dispatches incoming requests to the queue
+- __Synchronous Service Layer__: deals with "long-running tasks", implements the core business logic (eg. `AsciiArtGenerationService`)
+- __Queuing Layer__: a request queue, doesn't block the caller (eg `WorkQueue`)
+- __Asynchronous Service Layer__: dispatches incoming requests to the queue (eg. `NonBlockingDispatcher`)
 
 There might be a number of concurrently running synchronous services. The queueing layer
 is responsible for thread synchronization.
@@ -33,15 +32,15 @@ framework / OS design.
 
 ## Example
 source code directories:
-- `src/main/java/org/zezutom/concurrencypatterns/halfsynchalfasync`
-- `src/main/java/org/zezutom/concurrencypatterns/halfsynchalfasync/test`
+- `src/main/java/org/concurrencypatterns/halfsynchalfasync`
+- `src/main/java/org/concurrencypatterns/halfsynchalfasync/test`
 
 An ASCII Art generator (credit goes to [Evilzone](https://evilzone.org/java/(java-code)image-to-ascii-art-generator))
 is not only pleasant to work with, but it is also a suitable candidate for a long-running task. I saw it as a perfect
 fit for the pattern.
 
 ```java
-public class AsciiArtGenerator {
+public class AsciiArtGenerationService {
     ..
     /**
      * Converts an image to its ASCII representation.
@@ -60,20 +59,10 @@ to complete. As such it's bound to run in a background thread.
 The front-end of the app is served asynchronously via a non-blocking dispatcher:
 
 ```java
-/**
- * Represents an asynchronous layer, as it forwards client requests for further
- * processing and returns immediately. It receives results via notifications.
- *
- * @author: Tomas Zezula
- * Date: 24/08/2014
- */
-public class NonBlockingDispatcher {
+class NonBlockingDispatcher {
     ..
     /**
      * Sends a request to the queue and returns instantly.
-     *
-     * @param imgPath   Image path for the ASCII generator
-     * @param outPath   Output path for the ASCII generator
      */
     public void dispatch(final String imgPath, final String outPath) {..}
 
@@ -86,14 +75,11 @@ public class NonBlockingDispatcher {
 }
 ```
 
-Finally, the communication between the dispatcher and the worker thread is mediated by a dedicated queuing channel:
+Finally, the communication between the `Dispatcher` and the `worker thread` is mediated by a dedicated `queuing channel`:
 
 ```java
 /**
  * Queues incoming requests and notifies the dispatcher when the response is ready.
- *
- * @author: Tomas Zezula
- * Date: 24/08/2014
  */
 public class WorkQueue {..}
 ```

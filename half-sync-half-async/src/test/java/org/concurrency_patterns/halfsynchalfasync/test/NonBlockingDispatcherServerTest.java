@@ -1,12 +1,12 @@
 package org.concurrency_patterns.halfsynchalfasync.test;
 
 import org.apache.commons.io.FileUtils;
-import org.concurrency_patterns.halfsynchalfasync.non_blocking.AsyncResultSubscriberThread;
+import org.concurrency_patterns.halfsynchalfasync.non_blocking.dispatcher.AsyncSubscriberThread;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.zezutom.concurrencypatterns.test.util.DataUtil;
-import org.zezutom.concurrencypatterns.test.util.TestExecutor;
+import org.concurrency_patterns.common.util.DataUtil;
+import org.concurrency_patterns.common.util.TestExecutor;
 
 import java.io.File;
 import java.io.IOException;
@@ -24,11 +24,11 @@ public class NonBlockingDispatcherServerTest {
 
     public static final String OUT_ORIGINAL = "audrey.txt";
 
-    private AsyncResultSubscriberThread subscriber;
+    private AsyncSubscriberThread subscriber;
 
     @Before
     public void init() {
-        subscriber = new AsyncResultSubscriberThread(IMAGE, OUT_TEST);
+        subscriber = new AsyncSubscriberThread(IMAGE, OUT_TEST);
     }
 
     @After

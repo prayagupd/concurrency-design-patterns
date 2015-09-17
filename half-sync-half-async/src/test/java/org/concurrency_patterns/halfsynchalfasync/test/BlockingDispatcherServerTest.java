@@ -4,7 +4,7 @@ import org.apache.commons.io.FileUtils;
 import org.junit.After;
 import org.junit.Test;
 import org.concurrency_patterns.halfsynchalfasync.blocking.BlockingDispatcherServer;
-import org.zezutom.concurrencypatterns.test.util.DataUtil;
+import org.concurrency_patterns.common.util.DataUtil;
 
 import java.io.File;
 import java.io.IOException;

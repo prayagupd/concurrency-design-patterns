@@ -1,5 +1,7 @@
 package org.concurrency_patterns.monitorobject;
 
+import org.concurrency_patterns.monitorobject.exception.ToiletFloodedException;
+
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 

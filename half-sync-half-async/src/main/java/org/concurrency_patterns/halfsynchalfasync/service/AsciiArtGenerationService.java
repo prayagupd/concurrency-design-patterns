@@ -1,4 +1,4 @@
-package org.concurrency_patterns.halfsynchalfasync;
+package org.concurrency_patterns.halfsynchalfasync.service;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -15,7 +15,7 @@ import java.net.URISyntaxException;
  * @author: Tomas Zezula
  * Date: 27/08/2014
  */
-public class AsciiArtGenerator {
+public class AsciiArtGenerationService {
 
     public static final double RED = 0.30;
 
@@ -109,7 +109,7 @@ public class AsciiArtGenerator {
     }
 
     public static void main(String[] args) {
-        AsciiArtGenerator art = new AsciiArtGenerator();
+        AsciiArtGenerationService art = new AsciiArtGenerationService();
         art.convertToAscii("audrey_hepburn.jpg", "audrey.txt");
     }
 

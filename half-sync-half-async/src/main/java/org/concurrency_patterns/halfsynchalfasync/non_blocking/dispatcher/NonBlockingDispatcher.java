@@ -1,4 +1,6 @@
-package org.concurrency_patterns.halfsynchalfasync.non_blocking;
+package org.concurrency_patterns.halfsynchalfasync.non_blocking.dispatcher;
+
+import org.concurrency_patterns.halfsynchalfasync.non_blocking.queue.WorkQueue;
 
 /**
  * Represents an asynchronous layer, as it forwards client requests for further
@@ -13,9 +15,9 @@ public class NonBlockingDispatcher {
 
     private WorkQueue queue;
 
-    private ResultSubscriber subscriber;
+    private Subscriber subscriber;
 
-    public NonBlockingDispatcher(ResultSubscriber subscriber) {
+    public NonBlockingDispatcher(Subscriber subscriber) {
         queue = new WorkQueue(this);
         this.subscriber = subscriber;
     }

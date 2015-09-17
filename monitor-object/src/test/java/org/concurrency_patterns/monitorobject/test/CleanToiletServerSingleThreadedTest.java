@@ -4,7 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.concurrency_patterns.monitorobject.CleanToiletServer;
 import org.concurrency_patterns.monitorobject.ToiletServer;
-import org.concurrency_patterns.monitorobject.ToiletFloodedException;
+import org.concurrency_patterns.monitorobject.exception.ToiletFloodedException;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;

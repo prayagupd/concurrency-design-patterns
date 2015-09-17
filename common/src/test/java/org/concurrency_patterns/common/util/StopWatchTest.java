@@ -1,4 +1,4 @@
-package org.zezutom.concurrencypatterns.test.util;
+package org.concurrency_patterns.common.util;
 
 import org.junit.Before;
 import org.junit.Test;

@@ -1,6 +1,6 @@
 package org.concurrency_patterns.halfsynchalfasync.blocking;
 
-import org.concurrency_patterns.halfsynchalfasync.AsciiArtGenerator;
+import org.concurrency_patterns.halfsynchalfasync.service.AsciiArtGenerationService;
 
 /**
  * A usual single-threaded implementation.
@@ -11,7 +11,7 @@ import org.concurrency_patterns.halfsynchalfasync.AsciiArtGenerator;
 public class BlockingDispatcherServer {
 
     public boolean convertToAscii(String imgPath, String outPath) {
-        return new AsciiArtGenerator().convertToAscii(imgPath, outPath);
+        return new AsciiArtGenerationService().convertToAscii(imgPath, outPath);
     }
 
     public static void main(String[] args) {

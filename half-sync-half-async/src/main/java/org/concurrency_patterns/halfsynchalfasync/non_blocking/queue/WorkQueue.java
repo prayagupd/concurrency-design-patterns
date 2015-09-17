@@ -1,6 +1,7 @@
-package org.concurrency_patterns.halfsynchalfasync.non_blocking;
+package org.concurrency_patterns.halfsynchalfasync.non_blocking.queue;
 
-import org.concurrency_patterns.halfsynchalfasync.AsciiArtGenerator;
+import org.concurrency_patterns.halfsynchalfasync.service.AsciiArtGenerationService;
+import org.concurrency_patterns.halfsynchalfasync.non_blocking.dispatcher.NonBlockingDispatcher;
 
 import java.util.concurrent.*;
 
@@ -65,7 +66,7 @@ public class WorkQueue {
         return new Callable<Boolean>() {
             @Override
             public Boolean call() throws Exception {
-                return new AsciiArtGenerator().convertToAscii(imgPath, outPath);
+                return new AsciiArtGenerationService().convertToAscii(imgPath, outPath);
             }
         };
     }

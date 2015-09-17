@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>concurrency-patterns</artifactId>
-        <groupId>org.zezutom</groupId>
+        <groupId>org.concurrency_patterns</groupId>
         <version>${my.version}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -13,7 +13,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.zezutom</groupId>
+            <groupId>org.concurrency_patterns</groupId>
             <artifactId>common</artifactId>
             <version>${my.version}</version>
         </dependency>

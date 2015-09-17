@@ -8,10 +8,11 @@
         <my.version>1.0-SNAPSHOT</my.version>
     </properties>
 
-    <groupId>org.zezutom</groupId>
+    <groupId>org.concurrency_patterns</groupId>
     <artifactId>concurrency-patterns</artifactId>
     <packaging>pom</packaging>
     <version>${my.version}</version>
+
     <modules>
         <module>common</module>
         <module>active-object</module>
